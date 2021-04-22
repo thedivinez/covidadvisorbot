@@ -10,6 +10,11 @@ def index():
   return render_template("index.html")
 
 
+@app.route("/dashboard")
+def dashboard():
+  return render_template("dashboard.html", subjects=CovidScreaning.getdata())
+
+
 @app.route("/newmessage")
 def newmessage():
   message = {"ip_address": request.args.get("ip_address"), "message": request.args.get("message")}

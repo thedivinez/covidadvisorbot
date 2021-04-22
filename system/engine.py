@@ -8,6 +8,9 @@ table = TinyDB(os.path.join(os.getcwd(), "static", "db", "covidscreening.db")).t
 
 
 class CovidScreaning:
+  def getdata():
+    return table.all()
+
   def language(ip_address: str):
     return sh if CovidScreaning.user_data_in_db(ip_address).get("language") == "sh" else en
 

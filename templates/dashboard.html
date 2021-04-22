@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Fullname</th>
+      <th scope="col">Language</th>
+      <th scope="col">D.O.B</th>
+      <th scope="col">Symptoms</th>
+      <th scope="col">Exposures</th>
+      <th scope="col">Medical Conditions</th>
+    <tr>
+  </thead>
+  <tbody>
+    {% for subject in subjects %}
+    <tr>
+      <td>{{ subject.fullname }}</td>
+      <td>{{ subject.language }}</td>
+      <td>{{ subject.dob }}</td>
+      <td>{{ subject.symptoms }}</td>
+      <td>{{ subject.exposures }}</td>
+      <td>{{ subject.conditions }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
