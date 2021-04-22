@@ -43,7 +43,7 @@ class CovidScreaning:
       else:
         if user.get("authorised").lower() == "yes":
           stage = int(user.get("stage") + 1)
-          if stage - 1 in [2, 3, 4] and not message.lower() in ["yes", "no"]:
+          if stage - 1 in [3, 4, 5] and not message.lower() in ["yes", "no"]:
             return ln.INVALID_INPUT_MESSAGE
           if stage in ln.QUESTIONS.keys():
             column = ln.QUESTIONS[stage - 1]["column"]

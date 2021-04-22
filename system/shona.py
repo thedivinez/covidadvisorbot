@@ -53,18 +53,22 @@ Pindura uchit <strong>Hongu</strong> kana <strong>Kwete</strong>"""
           "question": "Ndeupi wako musi wekuzvarwa?"
       },
       2: {
+          "column": "country",
+          "question": "Uri munyika ipi parizvino?"
+      },
+      3: {
           "column": "symptoms",
           "question": symptoms
       },
-      3: {
+      4: {
           "column": "exposures",
           "question": exposures
       },
-      4: {
+      5: {
           "column": "conditions",
           "question": conditions
       },
-      5:
+      6:
       "Ndatenda nekushandisa chikuva chedu iwe unoda kuona mhedzisiro here. <br><br>Pindura uchiti <strong>Hongu</strong> kuona kana <strong>Kwete</strong> kutangazve."
   }
 

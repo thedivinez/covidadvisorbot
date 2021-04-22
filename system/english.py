@@ -52,18 +52,22 @@ Reply with <strong>Yes</strong> or <strong>No</strong>"""
           "question": "What's your date of birth?"
       },
       2: {
+          "column": "country",
+          "question": "In which country are you located?"
+      },
+      3: {
           "column": "symptoms",
           "question": symptoms
       },
-      3: {
+      4: {
           "column": "exposures",
           "question": exposures
       },
-      4: {
+      5: {
           "column": "conditions",
           "question": conditions
       },
-      5:
+      6:
       "Thank you for using our platform you you want to view results.<br><br> Reply with <strong>Yes</strong> to view or <strong>No</strong> to restart."
   }
 
