@@ -4,6 +4,7 @@
 <table class="table table-bordered">
   <thead class="thead-dark">
     <tr>
+      <th scope="col">IP Address</th>
       <th scope="col">Fullname</th>
       <th scope="col">Language</th>
       <th scope="col">D.O.B</th>
@@ -15,6 +16,7 @@
   <tbody>
     {% for subject in subjects %}
     <tr>
+      <td>{{ subject.ip_address }}</td>
       <td>{{ subject.fullname }}</td>
       <td>{{ subject.language }}</td>
       <td>{{ subject.dob }}</td>
