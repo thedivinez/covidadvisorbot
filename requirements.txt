@@ -1,0 +1,4 @@
+Flask==1.1.1
+tinydb==4.4.0
+gunicorn==20.0.4
+eventlet==0.28.0
