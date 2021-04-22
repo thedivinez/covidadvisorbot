@@ -68,7 +68,7 @@ $(".mytext").on("keydown", function (e) {
           $.get(`${window.location.origin}/newmessage?message=${text}&ip_address=${ipaddress}`, function (data, status) {
             insertChat("me", data.message);
           });
-        }, 2000);
+        }, 1000);
 
     }
   }
@@ -80,3 +80,4 @@ $('body > div > div > div:nth-child(2) > span').click(function () {
 
 //-- Clear Chat
 resetChat();
+insertChat("me", "Hi there I'm here to help with covid 19 screening advice.", 1000);
