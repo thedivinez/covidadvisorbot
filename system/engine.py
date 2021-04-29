@@ -1,15 +1,11 @@
-import os
-from tinydb import TinyDB, Query
 from system.shona import Shona as sh
 from system.english import English as en
-
-db_query = Query()
-table = TinyDB(os.path.join(os.getcwd(), "static", "db", "covidscreening.db")).table("subjects")
+from system.config import table, db_query
 
 
 class CovidScreaning:
   def getdata():
-    return table.all()
+    return table.table("subjects").all()
 
   def language(ip_address: str):
     return sh if CovidScreaning.user_data_in_db(ip_address).get("language") == "sh" else en
@@ -55,7 +51,7 @@ class CovidScreaning:
         return CovidScreaning.finalise_screaning(ln, message, ip_address)
 
   def user_data_in_db(ip_address: str):
-    user = table.get(db_query.ip_address == ip_address)
+    user = table.table("subjects").get(db_query.ip_address == ip_address)
     return user if user else {}
 
   def current_stage(ip_address: str) -> str:
@@ -64,9 +60,9 @@ class CovidScreaning:
   def update_user_data(userdata: dict, result: str):
     user = CovidScreaning.user_data_in_db(userdata["ip_address"])
     if user:
-      table.update(userdata, db_query.ip_address == userdata["ip_address"])
+      table.table("subjects").update(userdata, db_query.ip_address == userdata["ip_address"])
     else:
-      table.insert(userdata)
+      table.table("subjects").insert(userdata)
     return result
 
   def restartscreaning(language, ip_address: str) -> str:
