@@ -1,8 +1,7 @@
-from flask import render_template
+from system.auth import User
+from system.config import app
 from system.engine import CovidScreaning
-from flask import Flask, request, jsonify
-
-app = Flask(__name__)
+from flask import render_template, jsonify, request
 
 
 @app.route("/")
@@ -11,6 +10,7 @@ def index():
 
 
 @app.route("/dashboard")
+@User.signin_required
 def dashboard():
   return render_template("dashboard.html", subjects=CovidScreaning.getdata())
 
@@ -23,5 +23,18 @@ def newmessage():
   return response
 
 
+@app.route('/signin', methods=['GET', 'POST'])
+def signin():
+  # if the request is a GET we return the signin page else try to sign the user in
+  return render_template('signin.html') if request.method == 'GET' else User().signin()
+
+
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+  # If the request is GET we return the sign up page and forms
+  # if the request is POST, then we check if the email doesn't already exist and then we save data
+  return render_template('signup.html') if request.method == 'GET' else User().signup()
+
+
 if __name__ == "__main__":
-  app.run()
+  app.run(debug=True)

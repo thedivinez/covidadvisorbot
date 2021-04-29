@@ -4,7 +4,13 @@
 <link href="//netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 {%endblock%}
 {% block content %}
-<table class="table table-bordered">
+<nav class="navbar navbar-dark bg-dark">
+  <div class="navbar-menu navbar-end ml-auto">
+    <a class="btn btn-outline-light my-2 my-sm-0 " href="{{ url_for('index') }}">Home</a>
+    <a class="btn btn-outline-light my-2 my-sm-0 " href="{{ url_for('signin') }}">Sign Out</a>
+  </div>
+</nav>
+<table class="table table-bordered " style="margin: 2%;width:95%">
   <thead class="thead-dark">
     <tr>
       <th scope="col">IP Address</th>
