@@ -66,7 +66,7 @@ class CovidScreaning:
     return result
 
   def restartscreaning(language, ip_address: str) -> str:
-    table.remove(db_query.ip_address == ip_address)
+    table.table("subjects").remove(db_query.ip_address == ip_address)
     return language.RESTART_MESSAGE
 
   def generate_screaning_results(lang, ip_address: str) -> str:
